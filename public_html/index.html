@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+Author: Andrey Nekrasov
+Created: 18-09-2018
+Rev: 0.1
+-->
+<html>
+    <head>
+        <title>УПКМ-лайт</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href = "index_ue_tabs.css" rel="stylesheet"/> 
+        <link href = "index_ue.css" rel="stylesheet"/> 
+        
+        <script src = "ue_treemenu.js"></script>
+        <script src = "ue_tabs.js"></script>
+        <script src = "jquery-1.11.0.min.js"></script>
+    </head>
+    <body >
+        <div class="upkm-menu">
+            <div class="upkm-menu-head">
+                <div class="header-left"></div>
+                
+                <div class="header-right-info"></div>
+                <div class="header-right-user"></div>
+                <div class="header-right-pref"></div>
+            </div>
+            <div class="upkm-menu-nav"> <!-- навигационная панель -->
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'Devices')" id="defaultOpen"   >Оборудование</button>
+                    <button class="tablinks" onclick="openTab(event, 'Diagram')"                    >Мнемосхемы</button>
+                    <button class="tablinks" onclick="openTab(event, 'Reports')"                    >Отчеты</button>
+                </div>
+                <div id="Devices" class="tabcontent"> <!-- дерево с объектами мониторинга -->
+                    <ul class="ue_treemenu">
+                        <li> Подстанция 1 <img src="img/edit_3.png" class="ico_edit" ><img src="img/map_4.png" class="ico_edit" ><img src="img/cancel.png" class="ico_edit" >
+                            <ul>
+                            <li>этаж 1 <img src="img/edit_3.png" class="ico_edit" ><img src="img/map_4.png" class="ico_edit" ><img src="img/cancel.png" class="ico_edit" >
+                              <ul>
+                                <li>КДС_1</li>
+                                <li>КДС_2</li>
+                                <li>КДС_3</li>
+                                <li>КДС_4</li>
+                              </ul>
+                            </li>
+                            <li>этаж 2 <img src="img/edit_3.png" class="ico_edit" ><img src="img/map_4.png" class="ico_edit" ><img src="img/cancel.png" class="ico_edit" >
+                              <ul>
+                                <li>шкаф 1</li>
+                                <li>шкаф 2</li>
+                                <li>шкаф 3</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>Подстанция 2 <img src="img/edit_3.png" class="ico_edit" ><img src="img/map_4.png" class="ico_edit" ><img src="img/cancel.png" class="ico_edit" >
+                            <ul>
+                                <li>этаж 1 <img src="img/edit_3.png" class="ico_edit" ><img src="img/map_4.png" class="ico_edit" ><img src="img/cancel.png" class="ico_edit" >
+                                    <ul>
+                                        <li>КДС_1</li>
+                                        <li>КДС_2</li>
+                                    </ul>
+                                </li>
+                                <li>этаж 3 <img src="img/edit_3.png" class="ico_edit" ><img src="img/map_4.png" class="ico_edit" ><img src="img/cancel.png" class="ico_edit" >
+                                    <ul>
+                                        <li>ИБП</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>  
+                    </ul>
+                </div> 
+                <div id="Diagram" class="tabcontent"> <!--список мнемосхем -->
+                    <ul class="ue_treemenu">
+                        <li>Главная</li>
+                        <li>Подстанция 1</li>
+                        <li>Подстанция 2</li>
+                        <li>Оборудование</li>
+                            <ul>
+                                <li>КДС_1</li>
+                                <li>КДС_2</li>
+                                <li>ИБП</li>
+                            </ul>
+                    </ul>
+                </div>
+                <div id="Reports" class="tabcontent"> <!--Тут будут отчеты -->
+                    <ul class="ue_treemenu">
+                        <li>Аварии</li>
+                        <li>Отчет 1</li>
+                        <li>Отчет 2</li>
+                        <li>Отчет 3</li>
+                        <li>Отчет 4</li>
+                        <li>Отчет 5</li>
+                        <li>Отчет 6</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="upkm-menu-alarm">
+                    4
+            </div>
+        </div>
+        <div class="upkm-content"> <!-- главное поле контента -->
+            <div id="Content_Devices" class="tabcontent">  <!-- поле для состоний и сигналов устройств -->
+                devices
+            </div>
+            <div id="Content_Diagram" class="tabcontent">  <!-- поле для диаграмм и мнемосхем -->
+                <div class="diagram-edit-nav">
+                    <div class="diagram-edit-icon-ok"></div>
+                    <div class="diagram-edit-icon-cancel"></div>
+                    <div class="diagram-edit-text">Название мнемосхемы:</div>
+                    <input class="diagram-edit-input">
+                    <div class="diagram-edit-icon-mnemo"></div>
+                    <div class="diagram-edit-icon-device"></div>
+                    <div class="diagram-edit-icon-var"></div>
+                    <div class="diagram-edit-icon-var_b"></div>
+                    <div class="diagram-edit-icon-graf"></div>
+                    <div class="diagram-edit-icon-text"></div>
+                    <div class="diagram-edit-icon-map"></div>
+                    <div class="diagram-edit-icon-img"></div>
+                    
+                </div>
+            </div>
+            <div id="Content_Reports" class="tabcontent">  <!-- поле для отчетов -->
+                reports
+            </div>
+            <div id="Content_Logs" class="tabcontent">     <!-- поле для логов -->
+                logs
+            </div>
+        </div> 
+
+        <script>
+            var tree = document.getElementsByTagName('ul')[0];
+            var treeLis = tree.getElementsByTagName('li');
+//            var tree = document.getElementsByTagName('ul')[0];
+//            var treeLis = tree.getElementsByTagName('li');
+            ue_startTree(treeLis);
+            /* catch clicks on whole tree */
+            tree.onclick = function(event) {
+              var tree = document.getElementsByTagName('ul')[0];  
+              var target = event.target;
+
+              if (target.tagName != 'SPAN') {
+                return;
+              }
+
+              /* now we know the SPAN is clicked */
+              var childrenContainer = target.parentNode.getElementsByTagName('ul')[0];
+              if (!childrenContainer) return; // no children
+
+              childrenContainer.hidden = !childrenContainer.hidden;
+            }
+        </script>
+    </body>
+</html>

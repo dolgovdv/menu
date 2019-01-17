@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Tabs for metaserver</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .tab_content {
+                display: none;
+                padding: 0px;
+                border: 1px solid #ccc;
+                width: 50%;
+                height: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="head_tabs">
+            <button class="tab_button" onclick="openTab(event, 'Tab_meta')" id="defaultOpen" >META</button>
+            <button class="tab_button" onclick="openTab(event, 'Tab_Html')">HTML</button>
+            <button class="tab_button" onclick="openTab(event, 'Tab_css')">CSS</button>
+            <button class="tab_button" onclick="openTab(event, 'Tab_ico')">ICO</button>
+        </div>
+        <div id="Tab_meta"  class="tab_content">1</div>
+        <div id="Tab_Html"  class="tab_content">2</div>
+        <div id="Tab_css"   class="tab_content">3</div>
+        <div id="Tab_ico"   class="tab_content">4</div>
+        <script> 
+            onload function () {
+                
+            }
+        </script>
+    </body>
+</html>
